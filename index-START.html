@@ -22,11 +22,11 @@
       { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
       { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
       { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+      // { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+      // { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+      // { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+      // { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+      // { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
     ];
 
     const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
@@ -35,7 +35,8 @@
     //**********************************//
     // 1. Filter the list of inventors for those who were born in the 1500's
     const inventors1500s = inventors.filter(item => (item.year > 1499 && item.year < 1601))
-    //console.table(inventors1500s);
+    console.log('%c--List of inventors who were born in the 1500\'s--', "color: white; font-style: italic; background-color: red;padding: 2px")
+    console.table(inventors1500s);
 
     //**********************************//
     // Array.prototype.map()
@@ -48,7 +49,8 @@
       };
 
     })
-    //console.table(inventorsFullNames)
+    console.log('%c--Give us an array of the inventors first and last names--', "color: white; font-style: italic; background-color: red;padding: 2px")
+    console.table(inventorsFullNames)
 
     //**********************************//
     // Array.prototype.sort()
@@ -56,8 +58,9 @@
 
     // 3. Sort the inventors by birthdate, oldest to youngest
 
-    console.table(inventors); //original inventors
+    //console.table(inventors); //original inventors
     inventors.sort((a, b) => a.year - b.year);
+    console.table('%c--Sort the inventors by birthdate--', "color: white; font-style: italic; background-color: red;padding: 2px")
     console.table(inventors); //sorted inventors
 
     //**********************************//
@@ -65,8 +68,14 @@
     //**********************************//
 
     // 4. How many years did all the inventors live all together?
-
+    //let acc1 = 0;
+    const inventorsAgeTotal = inventors.reduce((acc, curr) => (acc + (curr.passed - curr.year)), 0)
+    console.log('%c--Give us total year of inventors lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
+    console.log(inventorsAgeTotal)
     // 5. Sort the inventors by years lived
+    inventors.sort((a, b) => (a.passed - a.year) - (a.passed - b.year));
+    console.log('%c--Sort the inventors by years lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
+    console.table(inventors)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
