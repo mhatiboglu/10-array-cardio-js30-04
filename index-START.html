@@ -73,7 +73,7 @@
     console.log('%c--Give us total year of inventors lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
     console.log(inventorsAgeTotal)
     // 5. Sort the inventors by years lived
-    inventors.sort((a, b) => (a.passed - a.year) - (a.passed - b.year));
+    inventors.sort((a, b) => (b.passed - b.year) - (a.passed - a.year));
     console.log('%c--Sort the inventors by years lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
     console.table(inventors)
 
