@@ -72,6 +72,7 @@
     const inventorsAgeTotal = inventors.reduce((acc, curr) => (acc + (curr.passed - curr.year)), 0)
     console.log('%c--Give us total year of inventors lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
     console.log(inventorsAgeTotal)
+
     // 5. Sort the inventors by years lived
     inventors.sort((a, b) => (b.passed - b.year) - (a.passed - a.year));
     console.log('%c--Sort the inventors by years lived--', "color: white; font-style: italic; background-color: red;padding: 2px")
@@ -79,7 +80,21 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    
+    
+    // Short way
+    const nameListFiltered = Array.from(document.querySelectorAll('.mw-category a'))
+      .map(item => item.text)
+      .filter(item => item.includes('de'));
 
+    /* // Long Way 
+    const data = document.querySelector('.mw-category');
+    const dataList = data.querySelectorAll('a')
+    const dataListArray = Array.from(dataList);
+
+    const nameList = dataListArray.map(item => item.text)
+    const nameListFiltered = nameList.filter(item=> item.includes('de'));
+    */
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
