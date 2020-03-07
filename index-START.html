@@ -111,6 +111,16 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
 
+    const sumedData = data.reduce((acc,cur)=> {
+      if(!acc[cur]){
+        console.log(acc[cur])
+        acc[cur] = 0;
+      }
+        acc[cur]++
+        return acc;
+    },{}) 
+    console.log('%c--Sum up the instances of each of Data array--', "color: white; font-style: italic; background-color: red;padding: 2px")
+    console.table(sumedData);
   </script>
 </body>
 
